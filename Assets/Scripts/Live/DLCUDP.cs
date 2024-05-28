@@ -22,7 +22,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-public class DLCLiveReceiver : MonoBehaviour
+public class DLCUDP : MonoBehaviour
 {
 
     // receiving Thread
@@ -43,7 +43,7 @@ public class DLCLiveReceiver : MonoBehaviour
     // start from shell
     private static void Main()
     {
-        DLCLiveReceiver receiveObj = new DLCLiveReceiver();
+        DLCUDP receiveObj = new DLCUDP();
         receiveObj.init();
 
         string text = "";

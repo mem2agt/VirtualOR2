@@ -1,4 +1,0 @@
-repository "VirtualOR_1.0@mem2agt@cloud"
-  path "/"
-    br "/main"
-    co "/main"
