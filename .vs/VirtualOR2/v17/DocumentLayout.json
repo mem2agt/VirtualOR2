@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\JustMonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Live\\JustMonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|c:\\users\\mccom\\documents\\github\\virtualor2\\assets\\scripts\\live\\burraway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\live\\burraway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|c:\\users\\mccom\\documents\\github\\virtualor2\\assets\\scripts\\live\\justmonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\live\\justmonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\assets\\scripts\\live\\movemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BurrAway.cs",
+              "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\BurrAway.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\BurrAway.cs",
+              "ToolTip": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\BurrAway.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Live\\BurrAway.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBUAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T00:23:09.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "JustMonika.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\JustMonika.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\JustMonika.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DLCUDP.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\DLCUDP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\DLCUDP.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MATLABUDP.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\MATLABUDP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\MATLABUDP.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MoveModel.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\MoveModel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\MoveModel.cs",
