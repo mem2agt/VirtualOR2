@@ -2,13 +2,16 @@ clear;
 clc;
 
 % Initialize Arduino and IMU
-UNO = arduino('COM16', 'Uno', 'Libraries', 'I2C');
+UNO = arduino('COM3', 'Uno', 'Libraries', 'I2C');
 imu = mpu6050(UNO, 'SampleRate', 200);
 fuse = imufilter('SampleRate', 200);
 
+% Define threshold for zeroing gyroscope readings (in deg/s)
+gyroZeroThreshold = 0.5; % Adjust as needed
+
 % UDP setup
 receiverIP = '127.0.0.1';  % Unity host IP
-receiverPort = 8051;       % Unity host port
+receiverPort = 8000;       % Unity host port
 udpClient = udp(receiverIP, receiverPort, 'LocalPort', 0);
 fopen(udpClient);
 
@@ -28,7 +31,9 @@ while true
             gyroBias = mean(gyro, 1);
             calibrationStartTime = toc(startTime);
         end
-        gyro = gyro - gyroBias;
+        %gyro = gyro - gyroBias;
+        gyroMagnitude = sqrt(sum(gyro.^2, 2));
+        gyro(gyroMagnitude < gyroZeroThreshold, :) = 0;
         Viz_data = fuse(accel, gyro);
         q = Viz_data(end);  % Get the latest quaternion. .Quaternion method does not work but the array is already in the correct format
         [q0, q1, q2, q3] = parts(q);

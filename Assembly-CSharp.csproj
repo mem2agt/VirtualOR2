@@ -60,9 +60,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Live\LivePelvisMove.cs" />
     <Compile Include="Assets\Scripts\Live\MATLABUDP.cs" />
-    <Compile Include="Assets\Scripts\Live\LiveBurrMove.cs" />
+    <Compile Include="Assets\Scripts\Live\JustMonika.cs" />
     <Compile Include="Assets\Scripts\Live\MoveModel.cs" />
     <Compile Include="Assets\Scripts\Collision\BurrCollision.cs" />
     <Compile Include="Assets\Scripts\Live\DLCUDP.cs" />
