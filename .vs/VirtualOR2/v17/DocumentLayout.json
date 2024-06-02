@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|c:\\users\\mccom\\documents\\github\\virtualor2\\assets\\scripts\\live\\burraway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\assets\\scripts\\live\\burraway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\live\\burraway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|c:\\users\\mccom\\documents\\github\\virtualor2\\assets\\scripts\\live\\justmonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\assets\\scripts\\live\\justmonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\live\\justmonika.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\assets\\scripts\\live\\movemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\live\\movemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\MakeRed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MakeRed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB246441-1748-351E-1968-101B09DA01C4}|Assembly-CSharp.csproj|C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\assets\\scripts\\live\\dlcudp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,8 +34,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MakeRed.cs",
+              "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\MakeRed.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MakeRed.cs",
+              "ToolTip": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\MakeRed.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MakeRed.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T17:14:43.373Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,7 +55,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\BurrAway.cs",
               "ToolTip": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\BurrAway.cs",
               "RelativeToolTip": "Assets\\Scripts\\Live\\BurrAway.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBUAAAA9AAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwEYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T00:23:09.167Z",
               "EditorCaption": ""
@@ -53,14 +68,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\JustMonika.cs",
               "ToolTip": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\JustMonika.cs",
               "RelativeToolTip": "Assets\\Scripts\\Live\\JustMonika.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAARAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAkwGoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T23:31:52.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DLCUDP.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\DLCUDP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\DLCUDP.cs",
@@ -72,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MATLABUDP.cs",
               "DocumentMoniker": "C:\\Users\\mccom\\Documents\\GitHub\\VirtualOR2\\Assets\\Scripts\\Live\\MATLABUDP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Live\\MATLABUDP.cs",
@@ -92,7 +107,8 @@
               "RelativeToolTip": "Assets\\Scripts\\Live\\MoveModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T20:44:56.622Z"
+              "WhenOpened": "2024-05-28T20:44:56.622Z",
+              "EditorCaption": ""
             }
           ]
         }

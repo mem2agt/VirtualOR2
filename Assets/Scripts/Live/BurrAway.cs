@@ -2,29 +2,41 @@ using UnityEngine;
 
 public class BurrAway : MonoBehaviour
 {
-    // The tag used to identify bone objects
-    public string boneTag = "Bone";
+    // The handle object that includes the burr
+    public GameObject handle;
 
-    // The tag used to identify the handle (which includes the burr)
-    public string handleTag = "Handle";
+    // The bone object to be modified
+    public GameObject bone;
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the collided object is a bone and the collision is caused by the handle
-        if (collision.gameObject.CompareTag(boneTag) && this.CompareTag(handleTag))
+        // Check if the collided object is the bone and the collision is caused by the handle
+        if (collision.gameObject == bone && this.gameObject == handle)
         {
+            Debug.Log("Collision detected between handle and bone.");
+
             // Get the mesh filter and collider of the bone
             MeshFilter meshFilter = collision.gameObject.GetComponent<MeshFilter>();
             MeshCollider meshCollider = collision.gameObject.GetComponent<MeshCollider>();
 
             if (meshFilter != null && meshCollider != null)
             {
+                Debug.Log("MeshFilter and MeshCollider found. Modifying mesh to simulate burring away.");
+
                 // Modify the mesh to simulate "burring away"
                 ModifyMesh(meshFilter.mesh, collision.contacts[0].point);
 
                 // Update the mesh collider to match the modified mesh
                 meshCollider.sharedMesh = meshFilter.mesh;
             }
+            else
+            {
+                Debug.LogWarning("MeshFilter or MeshCollider not found on the bone object.");
+            }
+        }
+        else
+        {
+            Debug.Log("Collision detected but not between the specified handle and bone.");
         }
     }
 
@@ -45,6 +57,7 @@ public class BurrAway : MonoBehaviour
             {
                 // Move vertex inward
                 vertices[i] *= 0.95f;
+                Debug.Log($"Vertex {i} moved inward.");
             }
         }
 
@@ -54,5 +67,6 @@ public class BurrAway : MonoBehaviour
         // Recalculate normals and bounds for the modified mesh
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
+        Debug.Log("Mesh modification complete. Normals and bounds recalculated.");
     }
 }

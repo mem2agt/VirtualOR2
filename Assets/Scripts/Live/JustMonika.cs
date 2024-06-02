@@ -20,8 +20,8 @@ public class JustMonika : MonoBehaviour
     // Bounding box parameters
     private float xMin = 0f;
     private float xMax = 640f;
-    private float yMin = 0f;
-    private float yMax = 480f;
+    private float zMin = -480f; // Adjusting the min and max to reflect the inverted direction
+    private float zMax = 0f;
 
     void Update()
     {
@@ -67,8 +67,8 @@ public class JustMonika : MonoBehaviour
         try
         {
             float x = float.Parse(data[startIndex]);
-            float y = float.Parse(data[startIndex + 1]);
-            result = new Vector3(x, y, 0);
+            float z = -float.Parse(data[startIndex + 1]); // Invert the z value
+            result = new Vector3(x, 0, z); // Changed y to z
             return true;
         }
         catch
@@ -100,7 +100,7 @@ public class JustMonika : MonoBehaviour
     {
         Vector3 smoothedPosition = GetSmoothedPosition(positions);
         smoothedPosition.x = Mathf.Clamp(smoothedPosition.x, xMin, xMax);
-        smoothedPosition.y = Mathf.Clamp(smoothedPosition.y, yMin, yMax);
+        smoothedPosition.z = Mathf.Clamp(smoothedPosition.z, zMin, zMax); // Clamp the inverted z value
         return smoothedPosition;
     }
 }
