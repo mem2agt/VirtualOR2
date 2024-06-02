@@ -15,6 +15,11 @@ public class MATLABUDP : MonoBehaviour
     public float qy;
     public float qz;
 
+    [Header("Displacement Data")]
+    public float x;
+    public float y;
+    public float z;
+
     void Start()
     {
         udpClient = new UdpClient(port);
@@ -26,28 +31,31 @@ public class MATLABUDP : MonoBehaviour
     {
         IPEndPoint ip = new IPEndPoint(IPAddress.Any, port);
         byte[] data = udpClient.EndReceive(ar, ref ip);
-        string orientationStr = Encoding.ASCII.GetString(data).Trim();
-        Debug.Log("Data received: " + orientationStr);
+        string dataStr = Encoding.ASCII.GetString(data).Trim();
+        Debug.Log("Data received: " + dataStr);
 
-        string[] orientationData = orientationStr.Split(',');
+        string[] dataArray = dataStr.Split(',');
 
-        if (orientationData.Length == 4)
+        if (dataArray.Length == 7)
         {
-            if (float.TryParse(orientationData[0], out qw) &&
-                float.TryParse(orientationData[1], out qx) &&
-                float.TryParse(orientationData[2], out qy) &&
-                float.TryParse(orientationData[3], out qz))
+            if (float.TryParse(dataArray[0], out qw) &&
+                float.TryParse(dataArray[1], out qx) &&
+                float.TryParse(dataArray[2], out qy) &&
+                float.TryParse(dataArray[3], out qz) &&
+                float.TryParse(dataArray[4], out x) &&
+                float.TryParse(dataArray[5], out y) &&
+                float.TryParse(dataArray[6], out z))
             {
-                // Update the quaternion data in the Inspector or do whatever you need to do with it
+                // Update the displacement and quaternion data in the Inspector or do whatever you need to do with it
             }
             else
             {
-                Debug.LogWarning("Failed to parse quaternion data.");
+                Debug.LogWarning("Failed to parse data.");
             }
         }
         else
         {
-            Debug.LogWarning("Unexpected data format: " + orientationStr);
+            Debug.LogWarning("Unexpected data format: " + dataStr);
         }
 
         udpClient.BeginReceive(new System.AsyncCallback(ReceiveData), null);

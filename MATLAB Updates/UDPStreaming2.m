@@ -5,15 +5,15 @@ clc;                          	% clear the command terminal
 
 % Creating Path to needed class libraries
 % include x-IMU MATLAB library
-addpath(['C:\Users\Student\OneDrive\Desktop\MATLAB Updates\ximu_matlab_library']);	
+addpath(['C:\Users\mccom\Documents\GitHub\VirtualOR2\MATLAB Updates\ximu_matlab_library']);	
 % include quaternion library
-addpath(['C:\Users\Student\OneDrive\Desktop\MATLAB Updates\quaternion_library']);
+addpath(['C:\Users\mccom\Documents\GitHub\VirtualOR2\MATLAB Updates\quaternion_library']);
 % Importing Mahony Function
 import MahonyAHRS.*
 
 %% Creating Connection To Arduino Uno
 % Create connection to Arduino Uno
-UNO = arduino('COM12', 'Uno', 'Libraries', 'I2C');
+UNO = arduino('COM3', 'Uno', 'Libraries', 'I2C');
 % Define Sample rate usually 100 hz or 200 hz
 imu = mpu6050(UNO, 'SampleRate', 200, 'SamplesPerRead', 1);
 
