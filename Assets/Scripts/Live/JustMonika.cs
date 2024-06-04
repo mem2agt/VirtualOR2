@@ -20,8 +20,18 @@ public class JustMonika : MonoBehaviour
     // Bounding box parameters
     private float xMin = 0f;
     private float xMax = 640f;
-    private float zMin = -480f; // Adjusting the min and max to reflect the inverted direction
-    private float zMax = 0f;
+    private float zMin = 0f; // Changed to zMin
+    private float zMax = 480f; // Changed to zMax
+
+    // Initial Y position
+    private float initialY;
+
+    void Start()
+    {
+        // Store the initial Y position
+        initialY = handlePositionTransform.position.y;
+        Debug.Log("Initial Y position: " + initialY);
+    }
 
     void Update()
     {
@@ -51,8 +61,15 @@ public class JustMonika : MonoBehaviour
                             Vector3 position;
                             if (TryParseVector3(data, 1, out position))
                             {
+                                // Add 50 to x and 100 to z before updating the queue
+                                position.x += 200;
+                                position.z -= 200;
+
                                 UpdatePositionQueue(handlePositions, position);
-                                handlePositionTransform.position = GetClampedSmoothedPosition(handlePositions);
+                                Vector3 smoothedPosition = GetClampedSmoothedPosition(handlePositions);
+                                smoothedPosition.y = Mathf.Clamp(smoothedPosition.y, initialY, Mathf.Infinity); // Clamp Y to initialY and positive infinity
+                                smoothedPosition.z *= -1; // Invert the Z position
+                                handlePositionTransform.position = smoothedPosition;
                             }
                         }
                     }
@@ -67,8 +84,8 @@ public class JustMonika : MonoBehaviour
         try
         {
             float x = float.Parse(data[startIndex]);
-            float z = -float.Parse(data[startIndex + 1]); // Invert the z value
-            result = new Vector3(x, 0, z); // Changed y to z
+            float z = float.Parse(data[startIndex + 1]); // Changed to parse Z-coordinate
+            result = new Vector3(x, handlePositionTransform.position.y, z); // Use current Y position
             return true;
         }
         catch
@@ -100,7 +117,7 @@ public class JustMonika : MonoBehaviour
     {
         Vector3 smoothedPosition = GetSmoothedPosition(positions);
         smoothedPosition.x = Mathf.Clamp(smoothedPosition.x, xMin, xMax);
-        smoothedPosition.z = Mathf.Clamp(smoothedPosition.z, zMin, zMax); // Clamp the inverted z value
+        smoothedPosition.z = Mathf.Clamp(smoothedPosition.z, zMin, zMax); // Change to zMin and zMax
         return smoothedPosition;
     }
 }

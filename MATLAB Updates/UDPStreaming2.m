@@ -91,11 +91,11 @@ while true
         [q0, q1, q2, q3] = parts(Viz_data);
 
         % Print orientation and displacement data in one line
-        fprintf('Orientation: [%f, %f, %f, %f], Displacement: [%f, %f, %f]\n', ...
+        fprintf('%f, %f, %f, %f, %f, %f, %f\n', ...
             q0, q1, q2, q3, DisplacementX, DisplacementY, DisplacementZ);
 
         % Send data to Unity via UDP
-        dataStr = sprintf('%.6f,%.6f,%.6f,%.6f', q0, q1, q2, q3);
+        dataStr = sprintf('%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f', q0, q1, q2, q3, DisplacementX, DisplacementY, DisplacementZ);
         fwrite(udpClient, dataStr);
 
         pause(0.01);

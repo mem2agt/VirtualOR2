@@ -2,32 +2,39 @@ using UnityEngine;
 
 public class BurrAway : MonoBehaviour
 {
-    // The handle object that includes the burr
     public GameObject handle;
-
-    // The bone object to be modified
     public GameObject bone;
+
+    private void Start()
+    {
+        Debug.Log($"Handle is on layer: {LayerMask.LayerToName(handle.layer)}");
+        Debug.Log($"Bone is on layer: {LayerMask.LayerToName(bone.layer)}");
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("OnCollisionEnter called.");
+        Debug.Log($"Collided with: {collision.gameObject.name}");
+
         // Check if the collided object is the bone and the collision is caused by the handle
-        if (collision.gameObject == bone && this.gameObject == handle)
+        if (collision.gameObject == bone && collision.other.gameObject == handle)
         {
             Debug.Log("Collision detected between handle and bone.");
 
-            // Get the mesh filter and collider of the bone
-            MeshFilter meshFilter = collision.gameObject.GetComponent<MeshFilter>();
-            MeshCollider meshCollider = collision.gameObject.GetComponent<MeshCollider>();
+            MeshFilter meshFilter = bone.GetComponent<MeshFilter>();
+            MeshCollider meshCollider = bone.GetComponent<MeshCollider>();
 
             if (meshFilter != null && meshCollider != null)
             {
                 Debug.Log("MeshFilter and MeshCollider found. Modifying mesh to simulate burring away.");
+                Debug.Log($"Contact point: {collision.contacts[0].point}");
 
                 // Modify the mesh to simulate "burring away"
                 ModifyMesh(meshFilter.mesh, collision.contacts[0].point);
 
                 // Update the mesh collider to match the modified mesh
                 meshCollider.sharedMesh = meshFilter.mesh;
+                Debug.Log("Mesh collider updated to match modified mesh.");
             }
             else
             {
@@ -42,31 +49,40 @@ public class BurrAway : MonoBehaviour
 
     private void ModifyMesh(Mesh mesh, Vector3 contactPoint)
     {
-        // Get the vertices and triangles of the mesh
         Vector3[] vertices = mesh.vertices;
-        int[] triangles = mesh.triangles;
+        Debug.Log($"Number of vertices: {vertices.Length}");
 
         // Convert the contact point to local space of the mesh
-        contactPoint = transform.InverseTransformPoint(contactPoint);
+        contactPoint = bone.transform.InverseTransformPoint(contactPoint);
+        Debug.Log($"Contact point in local space: {contactPoint}");
 
-        // Example modification: move vertices inward near the contact point to simulate "burring away"
         float burringRadius = 0.1f; // Define the radius of the burring effect
+        bool vertexModified = false;
+
         for (int i = 0; i < vertices.Length; i++)
         {
             if (Vector3.Distance(vertices[i], contactPoint) < burringRadius)
             {
                 // Move vertex inward
                 vertices[i] *= 0.95f;
+                vertexModified = true;
                 Debug.Log($"Vertex {i} moved inward.");
             }
         }
 
-        // Apply the modified vertices back to the mesh
-        mesh.vertices = vertices;
+        if (vertexModified)
+        {
+            // Apply the modified vertices back to the mesh
+            mesh.vertices = vertices;
 
-        // Recalculate normals and bounds for the modified mesh
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-        Debug.Log("Mesh modification complete. Normals and bounds recalculated.");
+            // Recalculate normals and bounds for the modified mesh
+            mesh.RecalculateNormals();
+            mesh.RecalculateBounds();
+            Debug.Log("Mesh modification complete. Normals and bounds recalculated.");
+        }
+        else
+        {
+            Debug.Log("No vertices were close enough to the contact point to be modified.");
+        }
     }
 }

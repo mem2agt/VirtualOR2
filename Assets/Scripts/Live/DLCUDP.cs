@@ -77,14 +77,14 @@ public class DLCUDP : MonoBehaviour
     private void init()
     {
         // Endpunkt definieren, von dem die Nachrichten gesendet werden.
-        print("UDPSend.init()");
+        //print("UDPSend.init()");
 
         // define port
         port = 8051;
 
         // status
-        print("Sending to 127.0.0.1 : " + port);
-        print("Test-Sending to this Port: nc -u 127.0.0.1  " + port + "");
+        //print("Sending to 127.0.0.1 : " + port);
+        //print("Test-Sending to this Port: nc -u 127.0.0.1  " + port + "");
 
 
         // ----------------------------
@@ -117,7 +117,7 @@ public class DLCUDP : MonoBehaviour
                 string text = Encoding.UTF8.GetString(data);
 
                 // Den abgerufenen Text anzeigen.
-                print(">> " + text);
+                //print(">> " + text);
 
                 // latest UDPpacket
                 lastReceivedUDPPacket = text;
@@ -128,7 +128,7 @@ public class DLCUDP : MonoBehaviour
             }
             catch (Exception err)
             {
-                print(err.ToString());
+                //print(err.ToString());
             }
         }
     }
